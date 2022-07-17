@@ -7,7 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary50: "#95FF00",
         solana: "rgb(153, 69, 255)",
+      },
+      fontFamily: {
+        archivo: ["Archivo", "sans-serif"],
       },
     },
   },

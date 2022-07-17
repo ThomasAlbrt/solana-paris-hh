@@ -1,4 +1,5 @@
 import React, { FC, useMemo } from "react";
+import { useRouter } from "next/router";
 import {
   ConnectionProvider,
   WalletProvider,
@@ -28,6 +29,7 @@ import Layout from "../components/Layout";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = WalletAdapterNetwork.Devnet;
 
@@ -53,12 +55,23 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     [network]
   );
 
+  const getBg = (path: string) => {
+    switch (path) {
+      case "/":
+        return "bg-[url('/background.png')] bg-cover bg-center bg-no-repeat";
+      default:
+        return "bg-black";
+    }
+  };
+
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <div className={getBg(router.pathname)}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </div>
       </WalletProvider>
     </ConnectionProvider>
   );

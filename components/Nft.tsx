@@ -6,33 +6,13 @@ interface Props {
 
 const Nft: React.FC<Props> = ({ name }) => {
   return (
-    <div className="rounded-md overflow-hidden border cursor-pointer">
-      <div
-        className="test h-[300px]"
-        style={{
-          background: `-webkit-linear-gradient(${
-            Math.random() * 360
-          }deg, rgb(171, 102, 255) 0%, rgb(20, 241, 149) 101.39%)`,
-        }}
-      />
-      <div>
-        <div className="flex justify-between p-4">
-          <p className="font-semibold">{name}</p>
-          <div className="flex flex-col">
-            <span className="text-[#71717A]">Floor</span>
-            <span>5 SOL</span>
-          </div>
-        </div>
-        <hr />
-        <div className="flex justify-between p-4">
-          <div className="flex flex-col">
-            <span className="text-[#71717A]">Stock</span>
-            <span>347</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-[#71717A]">Bid</span>
-            <span>6 SOL</span>
-          </div>
+    <div className="rounded-2xl overflow-hidden cursor-pointer p-3 bg-[#343434]">
+      <img src="/nft-picture.png" alt="nft-picture" />
+      <div className="mt-3 flex items-center">
+        <img src="/nft-logo.png" alt="nft-logo" width={60} height={60} />
+        <div className="flex ml-2">
+          <span className="uppercases font-bold mr-2">Meta Kongz Official</span>
+          <img src="/coche.svg" alt="coche-logo" />
         </div>
       </div>
     </div>

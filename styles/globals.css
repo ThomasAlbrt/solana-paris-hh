@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Archivo";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/Archivo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Archivo";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/Archivo-Bold.ttf");
+}
+
 .solana-gradient {
   background: -webkit-linear-gradient(
     340deg,
@@ -13,7 +27,8 @@
 }
 
 .sol-h-screen {
-  min-height: calc(100vh - 72px);
+  /* min-height: calc(100vh - 67px); */
+  min-height: 100vh;
 }
 
 .transition-enter {
