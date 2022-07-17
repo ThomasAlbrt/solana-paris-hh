@@ -1,7 +1,7 @@
 import Header from "./Header";
 
 interface Props {
-  children: any;
+  children: JSX.Element;
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
