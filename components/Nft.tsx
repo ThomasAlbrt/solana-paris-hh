@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-const Nft = ({ name }) => {
+interface Props {
+  name: string;
+}
+
+const Nft: React.FC<Props> = ({ name }) => {
   return (
     <div className="rounded-md overflow-hidden border cursor-pointer">
       <div
